@@ -96,3 +96,13 @@ tape( 'the function returns `NaN` if provided `NaN`', function test( t ) {
 	t.ok( val !== val, 'returns NaN' );
 	t.end();
 });
+
+tape( 'the function returns `0` if provided `+0`', function test( t ) {
+	t.equal( log1p( 0 ), 0, 'equals 0' );
+	t.end();
+});
+
+tape( 'the function returns `0` if provided `-0`', function test( t ) {
+	t.equal( log1p( -0 ), 0, 'equals 0' );
+	t.end();
+});
