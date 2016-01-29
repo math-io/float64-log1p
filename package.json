@@ -1,7 +1,7 @@
 {
   "name": "math-log1p",
   "version": "0.0.0",
-  "description": "Computes the natural logarithm of 1 + x",
+  "description": "Computes the natural logarithm of 1+x.",
   "author": {
     "name": "Philipp Burckhardt",
     "email": "pburckhardt@outlook.com"
@@ -10,6 +10,10 @@
     {
       "name": "Philipp Burckhardt",
       "email": "pburckhardt@outlook.com"
+    },
+    {
+      "name": "Athan Reines",
+      "email": "kgryte@gmail.com"
     }
   ],
   "scripts": {
@@ -35,7 +39,9 @@
     "math",
     "mathematics",
     "math.log",
+    "math.log1p",
     "ln",
+    "log1p",
     "natural",
     "logarithm",
     "log",

@@ -2,7 +2,7 @@ log1p
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the [natural logarithm][math-ln] of `1 + x`.
+> Computes the [natural logarithm][math-ln] of `1+x`.
 
 
 ## Installation
@@ -20,7 +20,7 @@ var log1p = require( 'math-log1p' );
 
 #### log1p( x )
 
-Computes the [natural logarithm][math-ln] of `1 + x`.
+Computes the [natural logarithm][math-ln] of `1+x`.
 
 ``` javascript
 var val = log1p( 4 );
@@ -33,7 +33,7 @@ val = log1p( Number.POSITIVE_INFINITY );
 // returns +infinity
 ```
 
-For negative numbers, the [natural logarithm][math-ln] is __not__ defined. `log1p` therefore returns `NaN` for all input values smaller than `-1`.
+For negative numbers, the [natural logarithm][math-ln] is __not__ defined. `log1p` therefore returns `NaN` for all input values less than `-1`.
 
 ``` javascript
 var val = log1p( -2 );
