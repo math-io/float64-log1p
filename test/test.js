@@ -90,3 +90,9 @@ tape( 'the function returns `NaN` if provided a number smaller than -1', functio
 	t.ok( val !== val, 'returns NaN' );
 	t.end();
 });
+
+tape( 'the function returns `NaN` if provided `NaN`', function test( t ) {
+	var val = log1p( NaN );
+	t.ok( val !== val, 'returns NaN' );
+	t.end();
+});
