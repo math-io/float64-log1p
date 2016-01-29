@@ -13,8 +13,14 @@ var log1p = require( './../lib' );
 
 // FIXTURES //
 
-var small = require( './fixtures/small.json' );
-var large = require( './fixtures/large.json' );
+var mediumNegative = require( './fixtures/medium_negative.json' );
+var mediumPositive = require( './fixtures/medium_positive.json' );
+var smallNegative = require( './fixtures/small_negative.json' );
+var smallPositive = require( './fixtures/small_positive.json' );
+var largeNegative = require( './fixtures/large_negative.json' );
+var largePositive = require( './fixtures/large_positive.json' );
+var tinyNegative = require( './fixtures/tiny_negative.json' );
+var tinyPositive = require( './fixtures/tiny_positive.json' );
 
 
 // TESTS //
@@ -24,7 +30,7 @@ tape( 'main export is a function', function test( t ) {
 	t.end();
 });
 
-tape( 'the function agrees with ln(x+1) for most x', function test( t ) {
+tape( 'the function agrees with `ln(x+1)` for most `x`', function test( t ) {
 	var expected;
 	var delta;
 	var val;
@@ -45,32 +51,162 @@ tape( 'the function agrees with ln(x+1) for most x', function test( t ) {
 	t.end();
 });
 
-tape( 'the function accurately computes ln(x+1) for very small x', function test( t ) {
+tape( 'the function accurately computes `ln(x+1)` for negative medium numbers', function test( t ) {
+	var expected;
 	var delta;
 	var tol;
 	var v;
+	var x;
 	var i;
 
-	for ( i = 0; i < small.data.length; i++ ) {
-		v = log1p( small.data[ i ] );
-		delta = abs( v - small.expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( small.expected[ i ] ) );
-		t.ok( delta <= tol, 'within tolerance. x: ' + small.data[ i ] + '. Value: ' + v + '. Expected: ' + small.expected[ i ] + '. Tolerance: ' + tol + '.' );
+	x = mediumNegative.x;
+	expected = mediumNegative.expected;
+
+	for ( i = 0; i < x.length; i++ ) {
+		v = log1p( x[ i ] );
+		delta = abs( v - expected[ i ] );
+		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
 });
 
-tape( 'the function accurately computes ln(x+1) for very large x', function test( t ) {
+tape( 'the function accurately computes `ln(x+1)` for positive medium numbers', function test( t ) {
+	var expected;
 	var delta;
 	var tol;
 	var v;
+	var x;
 	var i;
 
-	for ( i = 0; i < large.data.length; i++ ) {
-		v = log1p( large.data[ i ] );
-		delta = abs( v - large.expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( large.expected[ i ] ) );
-		t.ok( delta <= tol, 'within tolerance. x: ' + large.data[ i ] + '. Value: ' + v + '. Expected: ' + large.expected[ i ] + '. Tolerance: ' + tol + '.' );
+	x = mediumPositive.x;
+	expected = mediumPositive.expected;
+
+	for ( i = 0; i < x.length; i++ ) {
+		v = log1p( x[ i ] );
+		delta = abs( v - expected[ i ] );
+		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
+	}
+	t.end();
+});
+
+tape( 'the function accurately computes `ln(x+1)` for negative small numbers', function test( t ) {
+	var expected;
+	var delta;
+	var tol;
+	var v;
+	var x;
+	var i;
+
+	x = smallNegative.x;
+	expected = smallNegative.expected;
+
+	for ( i = 0; i < x.length; i++ ) {
+		v = log1p( x[ i ] );
+		delta = abs( v - expected[ i ] );
+		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
+	}
+	t.end();
+});
+
+tape( 'the function accurately computes `ln(x+1)` for positive small numbers', function test( t ) {
+	var expected;
+	var delta;
+	var tol;
+	var v;
+	var x;
+	var i;
+
+	x = smallPositive.x;
+	expected = smallPositive.expected;
+
+	for ( i = 0; i < x.length; i++ ) {
+		v = log1p( x[ i ] );
+		delta = abs( v - expected[ i ] );
+		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
+	}
+	t.end();
+});
+
+tape( 'the function accurately computes `ln(x+1)` for negative tiny numbers', function test( t ) {
+	var expected;
+	var delta;
+	var tol;
+	var v;
+	var x;
+	var i;
+
+	x = tinyNegative.x;
+	expected = tinyNegative.expected;
+
+	for ( i = 0; i < x.length; i++ ) {
+		v = log1p( x[ i ] );
+		delta = abs( v - expected[ i ] );
+		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
+	}
+	t.end();
+});
+
+tape( 'the function accurately computes `ln(x+1)` for positive tiny numbers', function test( t ) {
+	var expected;
+	var delta;
+	var tol;
+	var v;
+	var x;
+	var i;
+
+	x = tinyPositive.x;
+	expected = tinyPositive.expected;
+
+	for ( i = 0; i < x.length; i++ ) {
+		v = log1p( x[ i ] );
+		delta = abs( v - expected[ i ] );
+		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
+	}
+	t.end();
+});
+
+tape( 'the function accurately computes `ln(x+1)` for negative large numbers', function test( t ) {
+	var expected;
+	var delta;
+	var tol;
+	var v;
+	var x;
+	var i;
+
+	x = largeNegative.x;
+	expected = largeNegative.expected;
+
+	for ( i = 0; i < x.length; i++ ) {
+		v = log1p( x[ i ] );
+		delta = abs( v - expected[ i ] );
+		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
+	}
+	t.end();
+});
+
+tape( 'the function accurately computes `ln(x+1)` for positive large numbers', function test( t ) {
+	var expected;
+	var delta;
+	var tol;
+	var v;
+	var x;
+	var i;
+
+	x = largePositive.x;
+	expected = largePositive.expected;
+
+	for ( i = 0; i < x.length; i++ ) {
+		v = log1p( x[ i ] );
+		delta = abs( v - expected[ i ] );
+		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
 });
