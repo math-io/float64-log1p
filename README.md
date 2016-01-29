@@ -2,7 +2,7 @@ log1p
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the [natural logarithm][natural-logarithm] of 1 + x.
+> Computes the [natural logarithm][math-ln] of `1 + x`.
 
 
 ## Installation
@@ -20,7 +20,7 @@ var log1p = require( 'math-log1p' );
 
 #### log1p( x )
 
-Computes the [natural logarithm][natural-logarithm] of `x + 1`.
+Computes the [natural logarithm][math-ln] of `1 + x`.
 
 ``` javascript
 var val = log1p( 4 );
@@ -33,7 +33,7 @@ val = log1p( Number.POSITIVE_INFINITY );
 // returns +infinity
 ```
 
-For negative numbers, the [natural logarithm][natural-logarithm] is __not__ defined. `log1p` therefore returns `NaN` for all input values smaller than `-1`.
+For negative numbers, the [natural logarithm][math-ln] is __not__ defined. `log1p` therefore returns `NaN` for all input values smaller than `-1`.
 
 ``` javascript
 var val = log1p( -2 );
@@ -44,13 +44,14 @@ var val = log1p( -2 );
 ## Examples
 
 ``` javascript
+var round = require( 'math-round' );
 var log1p = require( 'math-log1p' );
 
 var x;
 var i;
 
 for ( i = 0; i < 100; i++ ) {
-	x = Math.round( Math.random() * 100 );
+	x = round( Math.random() * 100 );
 	console.log( log1p( x ) );
 }
 ```
@@ -142,4 +143,5 @@ Copyright &copy; 2016. The [Compute.io][compute-io] Authors.
 [testling]: https://ci.testling.com
 
 [compute-io]: https://github.com/compute-io/
-[natural-logarithm]: https://en.wikipedia.org/wiki/Natural_logarithm
+[math-ln]: https://github.com/math-io/ln
+
