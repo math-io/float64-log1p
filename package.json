@@ -66,6 +66,7 @@
     "jshint": "2.x.x",
     "jshint-stylish": "2.x.x",
     "math-abs": "^1.0.2",
+    "math-ln": "^1.0.0",
     "tap-spec": "4.x.x",
     "tape": "4.x.x",
     "testling": "1.x.x"

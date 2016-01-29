@@ -4,6 +4,7 @@
 
 var tape = require( 'tape' );
 var abs = require( 'math-abs' );
+var ln = require( 'math-ln' );
 var incrspace = require( 'compute-incrspace' );
 var pinf = require( 'const-pinf-float64' );
 var ninf = require( 'const-ninf-float64' );
@@ -24,18 +25,19 @@ tape( 'main export is a function', function test( t ) {
 });
 
 tape( 'the function agrees with ln(x+1) for most x', function test( t ) {
-	var delta;
-	var tol;
 	var expected;
+	var delta;
+	var val;
+	var tol;
 	var x;
 	var y;
-	var val;
 	var i;
+	
 	x = incrspace( 0, 1000, 0.5 );
 	for ( i = 0; i < x.length; i++ ) {
 		val = x[ i ];
 		y = log1p( val );
-		expected = Math.log( val + 1 );
+		expected = ln( val + 1 );
 		delta = abs( y - expected );
 		tol = 1e-12 * Math.max( 1, abs( y ), abs( expected ) );
 		t.ok( delta <= tol, 'within tolerance. x: ' + val + '. Value: ' + y + '. Expected: ' + expected + '. Tolerance: ' + tol + '.' );
