@@ -5,6 +5,8 @@
 var tape = require( 'tape' );
 var abs = require( 'math-abs' );
 var incrspace = require( 'compute-incrspace' );
+var pinf = require( 'const-pinf-float64' );
+var ninf = require( 'const-ninf-float64' );
 var log1p = require( './../lib' );
 
 
@@ -21,7 +23,7 @@ tape( 'main export is a function', function test( t ) {
 	t.end();
 });
 
-tape( 'the function agrees with Math.log(x+1) for most x', function test( t ) {
+tape( 'the function agrees with ln(x+1) for most x', function test( t ) {
 	var delta;
 	var tol;
 	var expected;
@@ -41,7 +43,7 @@ tape( 'the function agrees with Math.log(x+1) for most x', function test( t ) {
 	t.end();
 });
 
-tape( 'the function correctly calculates ln(x+1) for very small x', function test( t ) {
+tape( 'the function accurately computes ln(x+1) for very small x', function test( t ) {
 	var delta;
 	var tol;
 	var v;
@@ -56,7 +58,7 @@ tape( 'the function correctly calculates ln(x+1) for very small x', function tes
 	t.end();
 });
 
-tape( 'the function correctly calculates ln(x+1) for very large x', function test( t ) {
+tape( 'the function accurately computes ln(x+1) for very large x', function test( t ) {
 	var delta;
 	var tol;
 	var v;
@@ -72,12 +74,12 @@ tape( 'the function correctly calculates ln(x+1) for very large x', function tes
 });
 
 tape( 'the function returns `-infinity` if provided `-1`', function test( t ) {
-	t.equal( log1p( -1 ), Number.NEGATIVE_INFINITY, 'equals -infinity' );
+	t.equal( log1p( -1 ), ninf, 'equals -infinity' );
 	t.end();
 });
 
 tape( 'the function returns `+infinity` if provided `+infinity`', function test( t ) {
-	t.equal( log1p( Number.POSITIVE_INFINITY ), Number.POSITIVE_INFINITY, 'equals +infinity' );
+	t.equal( log1p( pinf ), pinf, 'equals +infinity' );
 	t.end();
 });
 
