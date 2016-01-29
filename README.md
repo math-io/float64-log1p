@@ -33,7 +33,7 @@ val = log1p( Number.POSITIVE_INFINITY );
 // returns +infinity
 ```
 
-For negative numbers, the [natural logarithm][math-ln] is __not__ defined. `log1p` therefore returns `NaN` for all input values less than `-1`.
+For `x < -1`, the `function` returns `NaN`, as the [natural logarithm][math-ln] is __not__ defined for negative numbers.
 
 ``` javascript
 var val = log1p( -2 );

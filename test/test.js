@@ -32,8 +32,8 @@ tape( 'the function agrees with ln(x+1) for most x', function test( t ) {
 	var x;
 	var y;
 	var i;
-	
-	x = incrspace( 0, 1000, 0.5 );
+
+	x = incrspace( -0.5, 1000, 0.5 );
 	for ( i = 0; i < x.length; i++ ) {
 		val = x[ i ];
 		y = log1p( val );
