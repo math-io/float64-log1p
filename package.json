@@ -47,7 +47,8 @@
     "log",
     "value",
     "scalar",
-    "number"
+    "number",
+    "small"
   ],
   "bugs": {
     "url": "https://github.com/math-io/log1p/issues"
