@@ -67,7 +67,7 @@ tape( 'the function accurately computes `ln(x+1)` for negative medium numbers', 
 	for ( i = 0; i < x.length; i++ ) {
 		v = log1p( x[ i ] );
 		delta = abs( v - expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		tol = 1e-16 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
 		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
@@ -87,7 +87,7 @@ tape( 'the function accurately computes `ln(x+1)` for positive medium numbers', 
 	for ( i = 0; i < x.length; i++ ) {
 		v = log1p( x[ i ] );
 		delta = abs( v - expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		tol = 1e-16 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
 		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
@@ -107,7 +107,7 @@ tape( 'the function accurately computes `ln(x+1)` for negative small numbers', f
 	for ( i = 0; i < x.length; i++ ) {
 		v = log1p( x[ i ] );
 		delta = abs( v - expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		tol = 1e-16 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
 		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
@@ -127,7 +127,7 @@ tape( 'the function accurately computes `ln(x+1)` for positive small numbers', f
 	for ( i = 0; i < x.length; i++ ) {
 		v = log1p( x[ i ] );
 		delta = abs( v - expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		tol = 1e-16 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
 		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
@@ -147,7 +147,7 @@ tape( 'the function accurately computes `ln(x+1)` for negative tiny numbers', fu
 	for ( i = 0; i < x.length; i++ ) {
 		v = log1p( x[ i ] );
 		delta = abs( v - expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		tol = 1e-16 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
 		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
@@ -167,7 +167,7 @@ tape( 'the function accurately computes `ln(x+1)` for positive tiny numbers', fu
 	for ( i = 0; i < x.length; i++ ) {
 		v = log1p( x[ i ] );
 		delta = abs( v - expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		tol = 1e-16 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
 		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
@@ -187,7 +187,7 @@ tape( 'the function accurately computes `ln(x+1)` for negative large numbers', f
 	for ( i = 0; i < x.length; i++ ) {
 		v = log1p( x[ i ] );
 		delta = abs( v - expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		tol = 1e-16 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
 		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
@@ -207,7 +207,7 @@ tape( 'the function accurately computes `ln(x+1)` for positive large numbers', f
 	for ( i = 0; i < x.length; i++ ) {
 		v = log1p( x[ i ] );
 		delta = abs( v - expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		tol = 1e-16 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
 		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
@@ -227,7 +227,7 @@ tape( 'the function accurately computes `ln(x+1)` for positive big numbers', fun
 	for ( i = 0; i < x.length; i++ ) {
 		v = log1p( x[ i ] );
 		delta = abs( v - expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		tol = 1e-16 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
 		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
@@ -247,7 +247,7 @@ tape( 'the function accurately computes `ln(x+1)` for positive huge numbers', fu
 	for ( i = 0; i < x.length; i++ ) {
 		v = log1p( x[ i ] );
 		delta = abs( v - expected[ i ] );
-		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		tol = 1e-16 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
 		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
@@ -264,8 +264,14 @@ tape( 'the function returns `+infinity` if provided `+infinity`', function test(
 });
 
 tape( 'the function returns `NaN` if provided a number smaller than -1', function test( t ) {
-	var val = log1p( -2 );
+	var val;
+
+	val = log1p( -2 );
 	t.ok( val !== val, 'returns NaN' );
+
+	val = log1p( ninf );
+	t.ok( val !== val, 'returns NaN' );
+
 	t.end();
 });
 
