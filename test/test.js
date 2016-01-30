@@ -19,6 +19,8 @@ var smallNegative = require( './fixtures/small_negative.json' );
 var smallPositive = require( './fixtures/small_positive.json' );
 var largeNegative = require( './fixtures/large_negative.json' );
 var largePositive = require( './fixtures/large_positive.json' );
+var bigPositive = require( './fixtures/big_positive.json' );
+var hugePositive = require( './fixtures/huge_positive.json' );
 var tinyNegative = require( './fixtures/tiny_negative.json' );
 var tinyPositive = require( './fixtures/tiny_positive.json' );
 
@@ -201,6 +203,46 @@ tape( 'the function accurately computes `ln(x+1)` for positive large numbers', f
 
 	x = largePositive.x;
 	expected = largePositive.expected;
+
+	for ( i = 0; i < x.length; i++ ) {
+		v = log1p( x[ i ] );
+		delta = abs( v - expected[ i ] );
+		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
+	}
+	t.end();
+});
+
+tape( 'the function accurately computes `ln(x+1)` for positive big numbers', function test( t ) {
+	var expected;
+	var delta;
+	var tol;
+	var v;
+	var x;
+	var i;
+
+	x = bigPositive.x;
+	expected = bigPositive.expected;
+
+	for ( i = 0; i < x.length; i++ ) {
+		v = log1p( x[ i ] );
+		delta = abs( v - expected[ i ] );
+		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		t.ok( delta <= tol, 'within tolerance. x: ' + x[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
+	}
+	t.end();
+});
+
+tape( 'the function accurately computes `ln(x+1)` for positive huge numbers', function test( t ) {
+	var expected;
+	var delta;
+	var tol;
+	var v;
+	var x;
+	var i;
+
+	x = hugePositive.x;
+	expected = hugePositive.expected;
 
 	for ( i = 0; i < x.length; i++ ) {
 		v = log1p( x[ i ] );

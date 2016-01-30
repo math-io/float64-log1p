@@ -111,7 +111,7 @@ close( outfile )
 
 
 # Negative large values:
-x = linspace( -1, -0.41422, 500 )
+x = linspace( -0.9999, -0.41422, 500 )
 
 y = log1p( x )
 println( y )
@@ -129,7 +129,7 @@ close( outfile )
 
 
 # Positive large values:
-x = linspace( 0.41422, 1e300, 500 )
+x = linspace( 0.41422, 100, 500 )
 
 y = log1p( x )
 println( y )
@@ -140,6 +140,42 @@ data = Dict([
 ])
 
 outfile = open( "./large_positive.json", "w" )
+JSON.json( data )
+
+write( outfile, JSON.json(data) )
+close( outfile )
+
+
+# Positive big values:
+x = linspace( 2.0^30, 2.0^52, 500 )
+
+y = log1p( x )
+println( y )
+
+data = Dict([
+	("x", x),
+	("expected", y)
+])
+
+outfile = open( "./big_positive.json", "w" )
+JSON.json( data )
+
+write( outfile, JSON.json(data) )
+close( outfile )
+
+
+# Positive huge values:
+x = linspace( 1e200, 1e300, 500 )
+
+y = log1p( x )
+println( y )
+
+data = Dict([
+	("x", x),
+	("expected", y)
+])
+
+outfile = open( "./huge_positive.json", "w" )
 JSON.json( data )
 
 write( outfile, JSON.json(data) )
