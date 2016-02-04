@@ -56,6 +56,7 @@
   "dependencies": {
     "const-ninf-float64": "^1.0.0",
     "const-pinf-float64": "^1.0.0",
+    "math-evalpoly": "^1.0.0",
     "math-float64-get-high-word": "^1.0.0",
     "math-float64-set-high-word": "^1.0.0"
   },
