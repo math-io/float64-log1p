@@ -8,14 +8,14 @@ log1p
 ## Installation
 
 ``` bash
-$ npm install math-log1p
+$ npm install math-float64-log1p
 ```
 
 
 ## Usage
 
 ``` javascript
-var log1p = require( 'math-log1p' );
+var log1p = require( 'math-float64-log1p' );
 ```
 
 #### log1p( x )
@@ -45,7 +45,7 @@ var val = log1p( -2 );
 
 ``` javascript
 var round = require( 'math-round' );
-var log1p = require( 'math-log1p' );
+var log1p = require( 'math-float64-log1p' );
 
 var x;
 var i;
@@ -120,23 +120,23 @@ $ make view-browser-tests
 Copyright &copy; 2016. The [Compute.io][compute-io] Authors.
 
 
-[npm-image]: http://img.shields.io/npm/v/math-log1p.svg
-[npm-url]: https://npmjs.org/package/math-log1p
+[npm-image]: http://img.shields.io/npm/v/math-float64-log1p.svg
+[npm-url]: https://npmjs.org/package/math-float64-log1p
 
-[build-image]: http://img.shields.io/travis/math-io/log1p/master.svg
-[build-url]: https://travis-ci.org/math-io/log1p
+[build-image]: http://img.shields.io/travis/math-io/float64-log1p/master.svg
+[build-url]: https://travis-ci.org/math-io/float64-log1p
 
-[coverage-image]: https://img.shields.io/codecov/c/github/math-io/log1p/master.svg
-[coverage-url]: https://codecov.io/github/math-io/log1p?branch=master
+[coverage-image]: https://img.shields.io/codecov/c/github/math-io/float64-log1p/master.svg
+[coverage-url]: https://codecov.io/github/math-io/float64-log1p?branch=master
 
-[dependencies-image]: http://img.shields.io/david/math-io/log1p.svg
-[dependencies-url]: https://david-dm.org/math-io/log1p
+[dependencies-image]: http://img.shields.io/david/math-io/float64-log1p.svg
+[dependencies-url]: https://david-dm.org/math-io/float64-log1p
 
-[dev-dependencies-image]: http://img.shields.io/david/dev/math-io/log1p.svg
-[dev-dependencies-url]: https://david-dm.org/dev/math-io/log1p
+[dev-dependencies-image]: http://img.shields.io/david/dev/math-io/float64-log1p.svg
+[dev-dependencies-url]: https://david-dm.org/dev/math-io/float64-log1p
 
-[github-issues-image]: http://img.shields.io/github/issues/math-io/log1p.svg
-[github-issues-url]: https://github.com/math-io/log1p/issues
+[github-issues-image]: http://img.shields.io/github/issues/math-io/float64-log1p.svg
+[github-issues-url]: https://github.com/math-io/float64-log1p/issues
 
 [tape]: https://github.com/substack/tape
 [istanbul]: https://github.com/gotwarlost/istanbul
@@ -144,4 +144,3 @@ Copyright &copy; 2016. The [Compute.io][compute-io] Authors.
 
 [compute-io]: https://github.com/compute-io/
 [math-ln]: https://github.com/math-io/ln
-
